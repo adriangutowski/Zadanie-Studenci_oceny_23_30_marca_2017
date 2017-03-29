@@ -2,21 +2,21 @@
 
 using namespace std;
 
-struct Student
+struct Uczen
 {
-    string Nazwisko;
-    float ZIOP, SO, Grafika, MySql;
-    Student()
+    string Nazw;
+    float ZIOP, Matematyka, Informatyka, BazyDanych;
+    Uczen()
     {
 
     }
-    Student(string Nazwisko, float ZIOP, float SO, float Grafika, float MySql)
+    Uczen(string Nazw, float ZIOP, float Matematyka, float Informatyka, float BazyDanych)
     {
-        this->Nazwisko = Nazwisko;
+        this->Nazw = Nazw;
         this->ZIOP = ZIOP;
-        this->SO = SO;
-        this->Grafika = Grafika;
-        this->MySql = MySql;
+        this->Matematyka = Matematyka;
+        this->Informatyka = Informatyka;
+        this->BazyDanych = BazyDanych;
     }
     float Ocena(int nrPrzedmiotu)
     {
@@ -25,45 +25,45 @@ struct Student
         case 0:
             return ZIOP;
         case 1:
-            return SO;
+            return Matematyka;
         case 2:
-            return Grafika;
+            return Informatyka;
         case 3:
-            return MySql;
+            return BazyDanych;
         }
     }
 };
 
 int main()
 {
-    Student Klasa[5];
+    Uczen Klasa[5];
 
     for(int i = 0; i < 5; ++i)
     {
-        cout << "STUDENT NR: " << i << endl;
-        cout << "Podaj nazwisko studenta: ";
-        cin >> Klasa[i].Nazwisko;
-        cout << "Podaj ocene z ZIOP: ";
+        cout << "Uczen NR: " << i << endl;
+        cout << "Wprowadz Nazwisko Ucznia: ";
+        cin >> Klasa[i].Nazw;
+        cout << "Wprowadz ocene z ZIOP: ";
         cin >> Klasa[i].ZIOP;
-        cout << "Podaj ocene z SO: ";
-        cin >> Klasa[i].SO;
-        cout << "Podaj ocene z Grafiki: ";
-        cin >> Klasa[i].Grafika;
-        cout << "Podaj ocene z MySql: ";
-        cin >> Klasa[i].MySql;
+        cout << "Wprowadz ocene z Matematyka: ";
+        cin >> Klasa[i].Matematyka;
+        cout << "Wprowadz ocene z Grafiki: ";
+        cin >> Klasa[i].Informatyka;
+        cout << "Wprowadz ocene z BazyDanych: ";
+        cin >> Klasa[i].BazyDanych;
         cout << endl;
     }
 
-    int nrStudenta, nrPrzedmiotu;
+    int nrUcznia, nrPrzedmiotu;
 
     while(true)
     {
         cout << endl << "SPRAWDZ OCENE" << endl;
-        cout << "Podaj numer studenta: ";
-        cin >> nrStudenta;
-        cout << "Podaj numer przedmiotu (ZIOP = 0, SO = 1, Grafika = 2, MySql = 3): ";
+        cout << "Numer Ucznia: ";
+        cin >> nrUcznia;
+        cout << "Numer przedmiotu (ZIOP = 0, Matematyka = 1, Informatyka = 2, BazyDanych = 3): ";
         cin >> nrPrzedmiotu;
-        cout << endl << "Ocena to: " << Klasa[nrStudenta].Ocena(nrPrzedmiotu) << endl;
+        cout << endl << "Ocena to: " << Klasa[nrUcznia].Ocena(nrPrzedmiotu) << endl;
     }
 
     return 0;
